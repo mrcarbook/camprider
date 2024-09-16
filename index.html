@@ -55,7 +55,7 @@
                     it's time <br> for GLamping !
                 </div> 
                 <div class="subtitle">
-                    Live the moment
+                    We Are Opening 
                 </div>
             </div>
             <div class="body">
@@ -65,7 +65,7 @@
                             Discover our glamping stories 
                         </li>
                         <li>
-                            find an event 
+                            is coming soon next 6 months 
                         </li>
                         <li>
                             become a camprider !
@@ -74,8 +74,10 @@
 
                 </div>
                 <div class="action">
-                    <div class="btn btn-action">
-                        read more
+                    <div class="btn btn-action">                        
+                            <a class="nav-item" id="contactUs" href="./ContactUs.html">
+                                Contact us
+                            </a>
                     </div>
                 </div>
             </div>
@@ -105,7 +107,7 @@
                             Couple plans
                         </div>
                         <div class="text">
-                            we provide special camping experience for couples . <br> we provide everything , just pick a date !
+                            we provide special camping experience for couples . <br> we provide everything  !
                         </div>
                     </div>
                 </div>
@@ -139,7 +141,10 @@
             </div>
             <div class="action">
                 <div class="btn btn-action">
-                    Show More !
+                   
+                    <a class="nav-item" id="plans" href="./Plans.html">
+                        Show More !
+                    </a>
                 </div>
             </div>
         </div>
@@ -169,8 +174,10 @@
                     </ul>
                 </div>
                 
-                <div href="" class="btn btn-action">
-                    Read More
+                <div href="" class="btn btn-action">                  
+                    <a class="nav-item" id="contactUs" href="./ContactUs.html">
+                        Contact us
+                    </a>
                 </div>
             </div>
         </div>
@@ -194,7 +201,9 @@
                     </ul>
                 </div>
                 <div href="" class="btn btn-action">
-                    Read More
+                    <a class="nav-item" id="contactUs" href="./ContactUs.html">
+                        Contact us
+                    </a>                
                 </div>
             </div>
         </div>
@@ -221,7 +230,7 @@
             </div>
             <form action="./index.html" class="form">
                 <div class="inline-input">
-                    <input type="email" placeholder="jhondoe@company.com">
+                    <input type="email" placeholder="your email">
                     <div class="btn btn-form">
                         Subscribe!
                     </div>
@@ -230,6 +239,10 @@
         </div>
     </section>
 
+    <div id="thankYouPopup" class="popup" style="display: none;">
+        <p>Thank you for subscribing!</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
 
 
     <footer>
@@ -267,7 +280,7 @@
             </div>
         </div>
         <div class="links">
-            <div class="about-links">
+           <!--  <div class="about-links">
                 <div class="title"> About </div>
                 <ul class="links">
                     <li>
@@ -304,7 +317,7 @@
                 </ul>
             </div>
             <div class="other-links">
-                <div class="title"> Other </div>
+                <div class="title"> About </div>
                 <ul class="links">
                     <li>
                         <a href="./index.html">Contact us</a>
@@ -317,9 +330,20 @@
                     </li>
                     
                 </ul>
-            </div>
+            </div> -->
         </div>
     </footer>
 <script src="./script.js"></script>
+<script>
+    document.querySelector('.btn-form').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('thankYouPopup').style.display = 'block';
+    document.querySelector('.inline-input input').value = '';
+});
+
+function closePopup() {
+    document.getElementById('thankYouPopup').style.display = 'none';
+}
+</script>
 </body>
 </html>

@@ -62,16 +62,16 @@
             </div>
             <form action="./index.html" class="form">
                 <div class="group">
-                    <input class="control" type="text" placeholder="rossi mario">
+                    <input class="control" type="text" id="name" placeholder="rossi mario">
                 </div>
                 <div class="group">
-                    <input class="control" type="email" placeholder="rossi.mario@email.com">
+                    <input class="control" type="email" id="email" placeholder="rossi.mario@email.com">
                 </div>
                 <div class="group">
-                    <textarea cols="30" rows="5" class="control" type="email" placeholder="your mail goes here !"></textarea>
+                    <textarea cols="30" rows="5" class="control" id="message" placeholder="your mail goes here!"></textarea>
                 </div>
-                <div class="btn btn-form">
-                    Send !
+                <div class="btn btn-form" id="sendBtn">
+                    Send!
                 </div>
             </form>
         </div>
@@ -92,9 +92,13 @@
 
 
             <div class="map">
-                <iframe width="100%" height="300" frameborder="0" scrolling="no" 
+           <!--    <iframe width="100%" height="300" frameborder="0" scrolling="no" 
                 marginheight="0" marginwidth="0" 
                 src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(Camprider)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+            </iframe> -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3518.452908877859!2d13.726174216783912!3d41.52437357473918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133aba8d04ac86d9%3A0x471a583099485bd1!2sLa%20Mandra%2C%2003030%20Colle%20San%20Magno%2C%20Province%20of%20Frosinone!5e1!3m2!1sen!2sit!4v1726523778626!5m2!1sen!2sit" 
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
             </iframe>
             </div>
 
@@ -137,7 +141,7 @@
             </div>
         </div>
         <div class="links">
-            <div class="about-links">
+         <!--   <div class="about-links">
                 <div class="title"> About </div>
                 <ul class="links">
                     <li>
@@ -187,10 +191,18 @@
                     </li>
                     
                 </ul>
-            </div>
+            </div> -->
         </div>
     </footer>
 
     <script src="./script.js"></script>
+    <script>
+        document.getElementById('sendBtn').addEventListener('click', function() {
+            var email = document.getElementById('email').value;
+            var subject = 'Reservation from La Mandra Glamping';
+            var body = document.getElementById('message').value;
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+    </script>
 </body>
 </html>
