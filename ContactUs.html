@@ -65,8 +65,8 @@
                 <div class="group">
                     <input class="control" type="text" id="name" placeholder="rossi mario">
                 </div>
-                <div class="group">
-                    <input class="control" type="email" id="email" placeholder="rossi.mario@email.com">
+                <div style="visibility: collapse;" class="group">
+                    <input class="control" type="hidden" id="email" placeholder="lamandra@ultracert.it">
                 </div>
                 <div class="group">
                     <textarea cols="30" rows="5" class="control" id="message" placeholder="your mail goes here!"></textarea>
@@ -199,7 +199,7 @@
     <script>
         document.getElementById('sendBtn').addEventListener('click', function() {
             var email = document.getElementById('email').value;
-            var subject = 'Reservation from La Mandra Glamping';
+            var subject = 'Info - Reservation from La Mandra Glamping';
             var body = document.getElementById('message').value;
             window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         });
