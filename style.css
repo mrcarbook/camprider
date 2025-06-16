@@ -1084,3 +1084,271 @@ main.plans .plans .plan .content .meta .btn-action{
         font-size: 47.5%;
     }
 }
+
+/* Stili per la pagina di prenotazione */
+.booking-page {
+    padding-top: 12rem;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--bg-color-primary) 0%, var(--bg-color-secondary) 100%);
+}
+
+.booking-page .header {
+    text-align: center;
+    padding: 2rem 0 4rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.booking-page .header .title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.booking-page .header .subtitle {
+    font-size: 1.6rem;
+    color: var(--color-tertiary);
+    line-height: 1.6;
+    padding: 0 2rem;
+}
+
+.booking-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.booking-form-wrapper {
+    background: white;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.booking-form .form-section {
+    margin-bottom: 3rem;
+}
+
+.booking-form .form-section h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--bg-color-secondary);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 1rem;
+    border: 2px solid var(--bg-color-secondary);
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: var(--color-primary);
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 1rem;
+    transform: scale(1.2);
+}
+
+.price-summary {
+    background: var(--bg-color-secondary);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.price-summary h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.price-details .price-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.price-details .price-line.total {
+    font-weight: 700;
+    font-size: 1.6rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--color-tertiary);
+    color: var(--color-primary);
+}
+
+.price-note {
+    font-size: 1.2rem;
+    color: var(--color-tertiary);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.booking-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.info-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-card ul li {
+    padding: 0.5rem 0;
+    font-size: 1.4rem;
+    color: var(--color-tertiary);
+    position: relative;
+    padding-left: 2rem;
+}
+
+.info-card ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    font-weight: bold;
+}
+
+.info-card p {
+    font-size: 1.4rem;
+    color: var(--color-tertiary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.info-card p strong {
+    color: var(--color-primary);
+}
+
+/* Popup per conferma prenotazione */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.popup-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 1rem;
+    max-width: 50rem;
+    text-align: center;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h3 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.popup-content p {
+    font-size: 1.6rem;
+    color: var(--color-tertiary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive per la pagina di prenotazione */
+@media (max-width: 768px) {
+    .booking-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem 2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .booking-form-wrapper {
+        padding: 2rem;
+    }
+    
+    .booking-page .header .title {
+        font-size: 2.8rem;
+    }
+    
+    .booking-page .header .subtitle {
+        font-size: 1.4rem;
+    }
+}

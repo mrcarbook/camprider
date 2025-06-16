@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenotazione | La Mandra Glamping</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header id="nav">
+        <div class="brand">
+            <a href="./index.html">
+                <img src="./ico/new_logo.png" alt=""> 
+            </a> 
+            <div class="brand-name">LA MANDRA GLAMPING</div>
+        </div>
+
+        <nav id="toggle" class="nav menu ">
+            <a id="toggler" class="nav-item menu-toggler">
+                <img src="./ico/menu.svg" >
+            </a>
+
+            <a class="nav-item" id="plans" href="./Plans.html">
+                Plans
+            </a>
+            
+            <a class="nav-item" id="booking" href="./Booking.html">
+                Prenotazione
+            </a>
+     
+            <a class="nav-item" id="contactus" href="./ContactUs.html">
+                Contact us
+            </a>
+        </nav>
+    </header>
+
+    <main class="booking-page">
+        <div class="header">
+            <div class="title">
+                Prenota la tua Esperienza Glamping
+            </div>
+            <div class="subtitle">
+                Compila il form sottostante per richiedere una prenotazione. Ti contatteremo entro 24 ore per confermare la disponibilità e finalizzare la tua prenotazione.
+            </div>
+        </div>
+
+        <div class="booking-container">
+            <div class="booking-form-wrapper">
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-section">
+                        <h3>Informazioni Personali</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Nome *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Cognome *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefono *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Dettagli Prenotazione</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="planType">Tipo di Piano *</label>
+                                <select id="planType" name="planType" required>
+                                    <option value="">Seleziona un piano</option>
+                                    <option value="couple">Couple Plan - €200/giorno</option>
+                                    <option value="friends">Friends Plan - €150/giorno</option>
+                                    <option value="experience">Experience Plan - €150/giorno</option>
+                                    <option value="school">School Plan - €150/giorno</option>
+                                    <option value="meeting">Meeting Plan - €200/giorno</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Numero Ospiti *</label>
+                                <input type="number" id="guests" name="guests" min="1" max="20" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkIn">Data Check-in *</label>
+                                <input type="date" id="checkIn" name="checkIn" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkOut">Data Check-out *</label>
+                                <input type="date" id="checkOut" name="checkOut" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Servizi Aggiuntivi</h3>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services" value="breakfast">
+                                <span class="checkmark"></span>
+                                Colazione inclusa (+€15/persona/giorno)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services" value="dinner">
+                                <span class="checkmark"></span>
+                                Cena al barbecue (+€25/persona/giorno)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services" value="transport">
+                                <span class="checkmark"></span>
+                                Trasporto dalla stazione (+€30)
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="services" value="activities">
+                                <span class="checkmark"></span>
+                                Attività guidate (+€20/persona/giorno)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Note Aggiuntive</h3>
+                        <div class="form-group">
+                            <label for="notes">Richieste speciali o note</label>
+                            <textarea id="notes" name="notes" rows="4" placeholder="Inserisci qui eventuali richieste speciali, allergie alimentari, o altre informazioni utili..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="price-summary">
+                        <h3>Riepilogo Prezzo</h3>
+                        <div class="price-details">
+                            <div class="price-line">
+                                <span>Piano base:</span>
+                                <span id="basePriceDisplay">€0</span>
+                            </div>
+                            <div class="price-line">
+                                <span>Servizi aggiuntivi:</span>
+                                <span id="servicesPriceDisplay">€0</span>
+                            </div>
+                            <div class="price-line total">
+                                <span>Totale stimato:</span>
+                                <span id="totalPriceDisplay">€0</span>
+                            </div>
+                            <p class="price-note">*Il prezzo finale sarà confermato al momento della prenotazione</p>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-action">
+                            Invia Richiesta di Prenotazione
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="booking-info">
+                <div class="info-card">
+                    <h3>Informazioni Importanti</h3>
+                    <ul>
+                        <li>Le prenotazioni sono soggette a disponibilità</li>
+                        <li>È richiesto un acconto del 30% per confermare la prenotazione</li>
+                        <li>Cancellazione gratuita fino a 7 giorni prima dell'arrivo</li>
+                        <li>Check-in: 15:00 - Check-out: 11:00</li>
+                        <li>Animali domestici ammessi su richiesta</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Cosa è Incluso</h3>
+                    <ul>
+                        <li>Alloggio in tenda glamping completamente attrezzata</li>
+                        <li>Biancheria da letto e asciugamani</li>
+                        <li>Accesso alle aree comuni</li>
+                        <li>Parcheggio gratuito</li>
+                        <li>WiFi nelle aree comuni</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Contatti</h3>
+                    <p>Per informazioni immediate:</p>
+                    <p><strong>Email:</strong> info@lamandraglamping.it</p>
+                    <p><strong>Telefono:</strong> +39 123 456 7890</p>
+                    <p><strong>Indirizzo:</strong> Vico Pellegrini 6, Colle San Magno - Italy</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Popup di conferma -->
+    <div id="bookingConfirmPopup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <h3>Richiesta Inviata!</h3>
+            <p>Grazie per la tua richiesta di prenotazione. Ti contatteremo entro 24 ore per confermare la disponibilità e finalizzare la prenotazione.</p>
+            <p>Controlla la tua email per i dettagli della richiesta.</p>
+            <button onclick="closeBookingPopup()" class="btn btn-action">Chiudi</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="about">
+            <div class="header">
+                <a href="./index.html" class="brand">
+                    <img src="./ico/new_logo.png" alt="">
+                </a>
+            </div>
+            <div class="details">
+               <q>
+                   the more you see the more alive you feel ! 
+               </q> <br> <sub>La Mandra Srls, IT03277570606, REA FR - 324906, Vico Pellegrini 6  Colle San Magno - Italy &copy; 2024</sub>
+            </div>
+        </div>
+        <div class="links">
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script>
+        // Imposta la data minima per check-in (oggi)
+        document.getElementById('checkIn').min = new Date().toISOString().split('T')[0];
+        
+        // Aggiorna la data minima per check-out quando cambia check-in
+        document.getElementById('checkIn').addEventListener('change', function() {
+            const checkInDate = new Date(this.value);
+            checkInDate.setDate(checkInDate.getDate() + 1);
+            document.getElementById('checkOut').min = checkInDate.toISOString().split('T')[0];
+        });
+
+        // Calcolo prezzo in tempo reale
+        function calculatePrice() {
+            const planType = document.getElementById('planType').value;
+            const guests = parseInt(document.getElementById('guests').value) || 0;
+            const checkIn = new Date(document.getElementById('checkIn').value);
+            const checkOut = new Date(document.getElementById('checkOut').value);
+            const services = document.querySelectorAll('input[name="services"]:checked');
+
+            let basePrice = 0;
+            let days = 0;
+
+            // Calcola giorni
+            if (checkIn && checkOut && checkOut > checkIn) {
+                days = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+            }
+
+            // Prezzo base per piano
+            const planPrices = {
+                'couple': 200,
+                'friends': 150,
+                'experience': 150,
+                'school': 150,
+                'meeting': 200
+            };
+
+            if (planType && planPrices[planType]) {
+                basePrice = planPrices[planType] * days;
+            }
+
+            // Calcola servizi aggiuntivi
+            let servicesPrice = 0;
+            services.forEach(service => {
+                switch(service.value) {
+                    case 'breakfast':
+                        servicesPrice += 15 * guests * days;
+                        break;
+                    case 'dinner':
+                        servicesPrice += 25 * guests * days;
+                        break;
+                    case 'transport':
+                        servicesPrice += 30;
+                        break;
+                    case 'activities':
+                        servicesPrice += 20 * guests * days;
+                        break;
+                }
+            });
+
+            const total = basePrice + servicesPrice;
+
+            // Aggiorna display
+            document.getElementById('basePriceDisplay').textContent = '€' + basePrice;
+            document.getElementById('servicesPriceDisplay').textContent = '€' + servicesPrice;
+            document.getElementById('totalPriceDisplay').textContent = '€' + total;
+        }
+
+        // Event listeners per calcolo prezzo
+        document.getElementById('planType').addEventListener('change', calculatePrice);
+        document.getElementById('guests').addEventListener('input', calculatePrice);
+        document.getElementById('checkIn').addEventListener('change', calculatePrice);
+        document.getElementById('checkOut').addEventListener('change', calculatePrice);
+        document.querySelectorAll('input[name="services"]').forEach(checkbox => {
+            checkbox.addEventListener('change', calculatePrice);
+        });
+
+        // Gestione invio form
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Qui potresti inviare i dati a un server
+            // Per ora mostriamo solo il popup di conferma
+            
+            document.getElementById('bookingConfirmPopup').style.display = 'flex';
+            
+            // Reset form
+            this.reset();
+            calculatePrice();
+        });
+
+        function closeBookingPopup() {
+            document.getElementById('bookingConfirmPopup').style.display = 'none';
+        }
+    </script>
+    <script src="//code.jivosite.com/widget/Evxkre602P" async></script>
+</body>
+</html>
